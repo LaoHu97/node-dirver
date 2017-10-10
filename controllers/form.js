@@ -93,7 +93,7 @@ async function img_upload(req, res, next) {
             })
           } else {
             res.send({
-              data:{url:"http://139.219.64.222/uploads/images/"+inputFile.originalFilename},
+              data:{url:"http://127.0.0.1/uploads/images/"+inputFile.originalFilename},
               status: 200,
               message: "上传成功！"
             })
