@@ -83,7 +83,7 @@ async function img_upload(req, res, next) {
         console.log(files);
         var inputFile = files.file[0];
         var uploadedPath = inputFile.path;
-        var dstPath = '../wwwroot/uploads/images/' + inputFile.originalFilename;
+        var dstPath = './uploads/images/' + inputFile.originalFilename;
         //重命名为真实文件名
         fs.rename(uploadedPath, dstPath, function(err) {
           if (err) {
