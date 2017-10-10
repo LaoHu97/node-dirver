@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-var DB_URL = 'mongodb://cosmos-db:3PtolYiQ0JRKM6SiKVhakE4oNqCDhNuj64TV5O9ARcRRinRP74cAZYHy7SsYWMtv3fPeavIS501HY5fwGTYMIg==@cosmos-db.documents.azure.cn:10255/?ssl=true';
+var DB_URL = 'mongodb://localhost:27017/logo';
 
 /**
  * 连接
  */
-mongoose.connect(DB_URL);
+mongoose.connect(DB_URL,{useMongoClient:true});
 
 /**
   * 连接成功
