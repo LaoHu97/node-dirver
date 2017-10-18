@@ -17,7 +17,7 @@
 //
 // module.exports = mongoose.model('Form',FormSchema);
 var videoInsert={
-  videoForm:'INSERT INTO `videoInsert` (`id`,`title`,`profiles`,`imageUrl`,`times`,`videoUrl`,`videoUrlPass`,`addr`,`domains`) VALUES(0,?,?,?,?,?,?,?,?)',
+  videoForm:'INSERT INTO `videoInsert` (`id`,`title`,`profiles`,`imageUrl`,`times`,`videoUrl`,`videoUrlPass`,`addr`,`domains`) VALUES(0,?,?,?,?,?,?,?)',
 }
 
 module.exports=videoInsert;

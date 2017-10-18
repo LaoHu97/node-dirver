@@ -18,6 +18,7 @@ async function formModel(req, res, next) {
     form.profiles = JSON.stringify(form.profiles);
     form.domains = JSON.stringify(form.domains);
     // 建立连接，向表中插入值
+    // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
     connection.query(ROOTFORM.videoForm, [form.title, form.profiles, form.imageUrl, form.times, form.videoUrl, form.videoUrlPass, form.addr, form.domains], function(err, result) {
       try { //添加
         if (result) {
@@ -56,6 +57,9 @@ async function getUserListPage(req, res, next) {
           return total = result[0]['count(*)']
         });
         connection.query(sql, function(err, result) {
+          for (var i = 0; i < result.length; i++) {
+            return result[i].profiles=JSON.parse(result[i].profiles);
+          }
           res.send({
             data: result,
             total: total,
@@ -162,7 +166,7 @@ async function getNewmovies(req, res, next) {
   var client = new Client();
   var query = req.query.query;
   if (query) {
-    client.registerMethod("jsonMethod", "http://api.douban.com/v2/movie/search" + "?q=" + query, "GET");
+    client.registerMethod("jsonMethod", "http://api.douban.com//v2/movie/search" + "?q=" + query, "GET");
     try {
       client.methods.jsonMethod(function(data, response) {
         // parsed response body as js object
