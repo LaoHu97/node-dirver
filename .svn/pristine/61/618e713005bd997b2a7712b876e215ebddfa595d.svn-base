@@ -145,38 +145,6 @@ async function getMoviesID(req, res, next) {
     connection.release();
   }
 }
-//查
-async function getMoviesTopImages(req, res, next) {
-  try {
-    var type = req.query.type;
-    if (type) {
-      pool.getConnection(function(err, connection) {
-        connection.query(ROOTFORM.moviesType, type, function(err, result) {
-          res.send({
-            data: result,
-            status: 200,
-            message: '查询成功！'
-          })
-          connection.release();
-        });
-      });
-    } else {
-      res.send({
-        status: 300,
-        message: '查询失败！'
-      })
-      // 释放连接
-      connection.release();
-    }
-  } catch (err) {
-    res.send({
-      status: 400,
-      message: "查询失败！"
-    })
-    // 释放连接
-    connection.release();
-  }
-}
 //上传图片
 async function img_upload(req, res, next) {
   //生成multiparty对象，并配置上传目标路径
@@ -319,8 +287,7 @@ module.exports = {
   getNewmovies: getNewmovies,
   getMoviesMessage: getMoviesMessage,
   getMoviesID:getMoviesID,
-  addImages:addImages,
-  getMoviesTopImages:getMoviesTopImages
+  addImages:addImages
 };
 
 // var ROOTFORM = require("../models/rootForm.js");

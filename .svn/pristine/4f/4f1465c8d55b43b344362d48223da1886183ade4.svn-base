@@ -20,8 +20,6 @@ router.get('/api/getNewmovies', formModel.getNewmovies);
 router.get('/api/getMoviesMessage', formModel.getMoviesMessage);
 //根据电影Id查询详情
 router.get('/api/getMoviesID', formModel.getMoviesID);
-//查询轮播图
-router.get('/api/getMoviesTopImages', formModel.getMoviesTopImages);
 //增加轮播图
 router.post('/api/addImages', formModel.addImages);
 

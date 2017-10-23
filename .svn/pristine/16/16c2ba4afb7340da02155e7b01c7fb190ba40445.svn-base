@@ -19,7 +19,6 @@
 var videoInsert={
   videoForm:'INSERT INTO `videoInsert` (`id`,`title`,`profiles`,`imageUrl`,`times`,`videoUrl`,`videoUrlPass`,`addr`,`domains`,`average`) VALUES(?,?,?,?,?,?,?,?,?,?)',
   moviesID: 'select * from videoInsert where id=?',
-  moviesType: 'select * from videoInsert where type=?',
   addImages:'UPDATE videoInsert SET type = ?,topImg = ? WHERE id = ?'
 }
 
