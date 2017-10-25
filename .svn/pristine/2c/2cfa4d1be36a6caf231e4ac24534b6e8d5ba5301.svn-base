@@ -18,7 +18,7 @@ async function formModel(req, res, next) {
     form.profiles = JSON.stringify(form.profiles);
     form.domains = JSON.stringify(form.domains);
     // 建立连接，向表中插入值
-    connection.query(ROOTFORM.videoForm, [form._id, form.title, form.profiles, form.imageUrl, form.times, form.videoUrl, form.videoUrlPass, form.addr, form.domains, form.average, form.data], function(err, result) {
+    connection.query(ROOTFORM.videoForm, [form._id, form.title, form.profiles, form.imageUrl, form.times, form.videoUrl, form.videoUrlPass, form.addr, form.domains, form.average], function(err, result) {
       try { //添加
         if (result) {
           res.send({
@@ -237,7 +237,7 @@ async function img_upload(req, res, next) {
           } else {
             res.send({
               data: {
-                url: "https://lao47.xin/uploads/images/" + inputFile.originalFilename
+                url: "http://39.108.223.138/uploads/images/" + inputFile.originalFilename
               },
               status: 200,
               message: "上传成功！"
