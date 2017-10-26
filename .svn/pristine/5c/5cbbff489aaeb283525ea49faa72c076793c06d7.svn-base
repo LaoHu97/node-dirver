@@ -324,14 +324,6 @@ async function getNewmovies(req, res, next) {
   }
 }
 async function getMoviesMessage(req, res, next) {
-  // var oss = new OSS({
-  //   region: 'oss-cn-hangzhou',
-  //   accessKeyId: 'LTAI7ZGF3z4a77JI',
-  //   accessKeySecret: 'tX0IKhcQDz3c4TrdaqWZmKvetjZfne',
-  //   bucket: 'video47'
-  // });
-  // var result = oss.list();
-  // console.log(result);
   var client = new Client();
   var id = req.query.id;
   client.registerMethod("jsonMethod", "https://api.douban.com/v2/movie/subject/" + id, "GET");
@@ -346,7 +338,6 @@ async function getMoviesMessage(req, res, next) {
       var filename = Date.now()+'.jpg';
       downloadFile(fileUrl,filename,function(){});
       data.images.large = "https://lao47.xin/uploads/images/"+filename;
-      var fileUrl  = data.images.large;
       res.send({
         status: 200,
         message: "搜索成功",
