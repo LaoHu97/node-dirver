@@ -83,8 +83,7 @@ async function updateResources(req, res, next) {
     // 获取前台页面传过来的参数
     var form = req.body;
     // 建立连接，向表中插入值
-    connection.query(ROOTFORM.updateResources,[form.videoUrl, form.videoUrlPass, form.id],function (err, result) {
-      console.log(result);
+    connection.query(ROOTFORM.videoUrlPass,[form.videoUrl, form.videoUrlPass, form.id],function (err, result) {
       try { //添加
         if (result.affectedRows==1) {
           res.send({
