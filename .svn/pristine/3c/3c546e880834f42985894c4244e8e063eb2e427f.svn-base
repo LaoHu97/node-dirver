@@ -38,8 +38,6 @@ router.post('/api/submitForm1', formModel01.submitForm1);
 router.get('/api/getRestrictedListPage', formModel01.getRestrictedListPage);
 //列表删除
 router.post('/api/romveRestrictedList', formModel01.romveRestrictedList);
-//根据电影Id查询详情
-router.get('/api/getRestrictedID', formModel01.getRestrictedID);
 
 
 
