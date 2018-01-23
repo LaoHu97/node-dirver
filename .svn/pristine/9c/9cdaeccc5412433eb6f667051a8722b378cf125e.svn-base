@@ -26,6 +26,7 @@ async function logo(req, res, next) {
               message: '登录成功！'
             })
             req.session.userinfo=username
+            console.log(req.session)
           } else {
             res.send({
               status: 300,

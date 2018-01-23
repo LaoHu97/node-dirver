@@ -143,7 +143,12 @@ async function statusTopImages(req, res, next) {
 }
 //查
 async function getUserListPage(req, res, next) {
-  console.log(req.session);
+  if (!req.session.userinfo) {
+    return res.send({
+      status: 401,
+      message: '查询失败！'
+    })
+  }
   try {
     var page = Number(req.query.page);
     var rows = Number(req.query.rows);

@@ -143,7 +143,6 @@ async function statusTopImages(req, res, next) {
 }
 //查
 async function getUserListPage(req, res, next) {
-  console.log(req.session);
   try {
     var page = Number(req.query.page);
     var rows = Number(req.query.rows);

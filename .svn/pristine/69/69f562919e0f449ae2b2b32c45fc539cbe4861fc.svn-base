@@ -45,12 +45,12 @@ app.use(cookieParser('sessionID'));
 app.use(session({
 	key:'sessionID',
 	secret: 'sessionID',
-	resave:false,
-	saveUninitialized: true,
 	store: new MySQLStore(db.mysql),
+	resave: false,
 	cookie:{
-			maxAge:5
-	}
+			maxAge:1000
+	},
+	saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -45,8 +45,6 @@ app.use(cookieParser('sessionID'));
 app.use(session({
 	key:'sessionID',
 	secret: 'sessionID',
-	resave:false,
-	saveUninitialized: true,
 	store: new MySQLStore(db.mysql),
 	cookie:{
 			maxAge:5
