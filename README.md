@@ -1,5 +1,7 @@
 # About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/LaoHu97/node-dirver.svg)](https://greenkeeper.io/)
+
 此项目是 nodejs + express + MySQL 构建的一套后台管理系统
 
 
